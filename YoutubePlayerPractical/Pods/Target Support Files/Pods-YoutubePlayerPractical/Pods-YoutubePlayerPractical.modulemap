@@ -1,0 +1,6 @@
+framework module Pods_YoutubePlayerPractical {
+  umbrella header "Pods-YoutubePlayerPractical-umbrella.h"
+
+  export *
+  module * { export * }
+}
