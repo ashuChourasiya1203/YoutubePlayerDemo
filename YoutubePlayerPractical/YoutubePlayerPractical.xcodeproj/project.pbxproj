@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18BA2B602A1B87DD00821A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA2B5F2A1B87DD00821A21 /* AppDelegate.swift */; };
-		18BA2B622A1B87DD00821A21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA2B612A1B87DD00821A21 /* SceneDelegate.swift */; };
 		18BA2B642A1B87DD00821A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA2B632A1B87DD00821A21 /* ViewController.swift */; };
 		18BA2B672A1B87DD00821A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA2B652A1B87DD00821A21 /* Main.storyboard */; };
 		18BA2B692A1B87DF00821A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BA2B682A1B87DF00821A21 /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		18BA2B5C2A1B87DD00821A21 /* YoutubePlayerPractical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePlayerPractical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BA2B5F2A1B87DD00821A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18BA2B612A1B87DD00821A21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18BA2B632A1B87DD00821A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18BA2B662A1B87DD00821A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BA2B682A1B87DF00821A21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				18BA2B5F2A1B87DD00821A21 /* AppDelegate.swift */,
-				18BA2B612A1B87DD00821A21 /* SceneDelegate.swift */,
 				18BA2B632A1B87DD00821A21 /* ViewController.swift */,
 				18BA2B652A1B87DD00821A21 /* Main.storyboard */,
 				18BA2B682A1B87DF00821A21 /* Assets.xcassets */,
@@ -88,7 +85,6 @@
 				F74FA664B0DF173CA6287D75 /* Pods-YoutubePlayerPractical.debug.xcconfig */,
 				AA806EC1BF4A44D0ECA6310C /* Pods-YoutubePlayerPractical.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,7 +205,6 @@
 			files = (
 				18BA2B642A1B87DD00821A21 /* ViewController.swift in Sources */,
 				18BA2B602A1B87DD00821A21 /* AppDelegate.swift in Sources */,
-				18BA2B622A1B87DD00821A21 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

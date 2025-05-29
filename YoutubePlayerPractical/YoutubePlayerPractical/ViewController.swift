@@ -8,149 +8,82 @@
 import UIKit
 import youtube_ios_player_helper
 
+let videoURL = "https://www.youtube.com/watch?v=4FyGwyeB6cc"
+
 class ViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     var playerView: YTPlayerView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-
-//        let videoURL = "https://www.youtube.com/watch?v=F9G1IYXcSHY&t=2s"
-//        DispatchQueue.main.async {
-//            if let videoID = self.extractVideoID(from: videoURL) {
-//                self.playYouTubeVideo(videoID: videoID)
-//            } else {
-//                print("Invalid YouTube URL")
-//            }
-//        }
+        self.demo1()
+        //self.demo2()
+//        self.demo3()
     }
-
+    
     func extractVideoID(from videoURL: String) -> String? {
-        guard let url = URL(string: videoURL) else {
-            return nil
-        }
-
+        guard let url = URL(string: videoURL) else { return nil }
         let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
         return queryItems?.first(where: { $0.name == "v" })?.value
     }
-
-    func playYouTubeVideo(videoID: String) {
-        playerView.load(withVideoId: videoID)
-    }
     
-    @IBAction func btnPlay(_ sender: UIButton) {
+    private func demo1() {
+        self.playerView = YTPlayerView()
+        self.playerView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.playerView)
         
-        playerView = YTPlayerView()
-        playerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(playerView)
-
         NSLayoutConstraint.activate([
-            playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            playerView.widthAnchor.constraint(equalToConstant: 300),
-            playerView.heightAnchor.constraint(equalToConstant: 150)
+            self.playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            self.playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            self.playerView.widthAnchor.constraint(equalToConstant: 300),
+            self.playerView.heightAnchor.constraint(equalToConstant: 150)
         ])
         
-        let videoURL = "https://www.youtube.com/watch?v=F9G1IYXcSHY&t=2s"
+        if let videoID = self.extractVideoID(from: videoURL) {
+            self.playerView.load(withVideoId: videoID)
+        } else {
+            print("Invalid YouTube URL")
+        }
+    }
+    
+    private func demo2() {
+        self.playerView = YTPlayerView()
+        self.playerView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.playerView)
+
+        NSLayoutConstraint.activate([
+            self.playerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.playerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.playerView.widthAnchor.constraint(equalToConstant: 300),
+            self.playerView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        self.playerView.load(withVideoId:  "4FyGwyeB6cc")
+    }
+    
+    private func demo3() {
+        self.playerView = YTPlayerView()
+        self.playerView.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView.addSubview(self.playerView)
+
+        NSLayoutConstraint.activate([
+            self.playerView.topAnchor.constraint(equalTo: self.imageView.topAnchor),
+            self.playerView.leadingAnchor.constraint(equalTo: self.imageView.leadingAnchor),
+            self.playerView.trailingAnchor.constraint(equalTo: self.imageView.trailingAnchor),
+            self.playerView.heightAnchor.constraint(equalToConstant: 160)
+        ])
+
+        let videoURL = "https://www.youtube.com/watch?v=4FyGwyeB6cc"
         DispatchQueue.main.async {
             if let videoID = self.extractVideoID(from: videoURL) {
-                self.playYouTubeVideo(videoID: videoID)
+                self.playerView.load(withVideoId: videoID)
             } else {
                 print("Invalid YouTube URL")
             }
         }
     }
+    
+    @IBAction func btnPlay(_ sender: UIButton) {
+        self.demo1()
+    }
 }
-
-
-
-//import UIKit
-//import youtube_ios_player_helper
-//
-//class ViewController: UIViewController {
-//
-//    var playerView: YTPlayerView!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        playerView = YTPlayerView()
-//        playerView.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(playerView)
-//
-//        NSLayoutConstraint.activate([
-//            playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            playerView.widthAnchor.constraint(equalToConstant: 300),
-//            playerView.heightAnchor.constraint(equalToConstant: 200)
-//        ])
-//
-//        playYouTubeVideo(videoID: "F9G1IYXcSHY")
-//    }
-//
-//    func playYouTubeVideo(videoID: String) {
-//        playerView.load(withVideoId: videoID)
-//    }
-//}
-
-//import UIKit
-//import youtube_ios_player_helper
-//
-//class ViewController: UIViewController {
-//
-//    var playerView: YTPlayerView!
-//    @IBOutlet weak var imageView: UIImageView!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        playerView = YTPlayerView()
-//        playerView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.addSubview(playerView)
-//
-//        NSLayoutConstraint.activate([
-//            playerView.topAnchor.constraint(equalTo: imageView.topAnchor),
-//            playerView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-//            playerView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-//            playerView.heightAnchor.constraint(equalToConstant: 160)
-//        ])
-//
-//        let videoURL = "https://www.youtube.com/watch?v=F9G1IYXcSHY&t=2s"
-//        DispatchQueue.main.async {
-//            if let videoID = self.extractVideoID(from: videoURL) {
-//                self.playYouTubeVideo(videoID: videoID)
-//            } else {
-//                print("Invalid YouTube URL")
-//            }
-//        }
-//    }
-//
-//    func extractVideoID(from videoURL: String) -> String? {
-//        guard let url = URL(string: videoURL) else {
-//            return nil
-//        }
-//
-//        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
-//        return queryItems?.first(where: { $0.name == "v" })?.value
-//    }
-//
-//    func playYouTubeVideo(videoID: String) {
-//        playerView.load(withVideoId: videoID)
-//    }
-//
-//
-//    @IBAction func btnPlay(_ sender: UIButton) {
-//        let videoURL = "https://www.youtube.com/watch?v=F9G1IYXcSHY&t=2s"
-//        DispatchQueue.main.async {
-//            if let videoID = self.extractVideoID(from: videoURL) {
-//                self.playYouTubeVideo(videoID: videoID)
-//            } else {
-//                print("Invalid YouTube URL")
-//            }
-//        }
-//    }
-//}
-
-
